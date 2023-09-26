@@ -10,6 +10,7 @@ def simplex(tab):
     sa = len(tab.index)-1 # número de restrições
     n = 0 # número de iterações
     tab_np = tab.to_numpy().astype(float) # converte dados para numpy array
+    base = np.array([i+var-sa+1 for i in range(sa)]) # índices das varíaveis básicas
         
     # testando se coeficientes b_ij são não-negativos e aplicando correção, caso necessário
     for i in range(len(tab_np)):
